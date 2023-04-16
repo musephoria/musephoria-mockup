@@ -16,7 +16,15 @@ import CollabList from '~/components/CollabList';
     { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
   ]
 
-  
+  type ActivityItems = {
+    name: string;
+    imageUrl: string;
+    projectName: string;
+    commit: string;
+    branch: string;
+    date: string;
+    dataTime: string;
+  };
 
 
   const ActivityItems = [
@@ -85,7 +93,7 @@ import CollabList from '~/components/CollabList';
 
 
   
-  function classNames(...classes) {
+  function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
   }
   

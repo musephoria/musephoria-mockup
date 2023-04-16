@@ -1,18 +1,24 @@
-const tabs = [
-    { name: 'Uploads', href: '#', current: false },
+type Tab = {
+  name: string;
+  href: string;
+  current: boolean;
+};
+
+const tabs: Tab[] = [
+  { name: 'Uploads', href: '#', current: false },
     { name: 'Editor', href: '#', current: false },
     { name: 'Feedback', href: '#', current: true },
     { name: 'Find People Near You', href: '#', current: false },
     { name: 'Discuss Music', href: '#', current: false },
   ]
   
-  function classNames(...classes) {
+  function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
   }
   
   export default function DashboardTabs() {
     return (
-      <div className="relative border-b border-gray-200 pb-5 sm:pb-0">
+      <div className="relative border-b bg-gray-200 border-gray-200 pb-5 sm:pb-0">
         <div className="md:flex md:items-center md:justify-between">
           <h3 className="text-base font-semibold leading-6 text-gray-900">Candidates</h3>
           <div className="mt-3 flex md:absolute md:right-0 md:top-3 md:mt-0">
@@ -30,7 +36,7 @@ const tabs = [
             </button>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 bg-gray-300">
           <div className="sm:hidden">
             <label htmlFor="current-tab" className="sr-only">
               Select a tab
@@ -39,7 +45,7 @@ const tabs = [
               id="current-tab"
               name="current-tab"
               className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-              defaultValue={tabs.find((tab) => tab.current).name}
+              defaultValue={tabs.find((tab) => tab.current)!.name}
             >
               {tabs.map((tab) => (
                 <option key={tab.name}>{tab.name}</option>

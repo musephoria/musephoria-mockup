@@ -67,7 +67,7 @@ const activityItems = [
   // More items...
 ]
 
-function classNames(...classes) {
+function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -98,7 +98,9 @@ export default function Index() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             {/* Replace with your content */}
             <div className="py-4">
+              <div className="absolute top-5 right-8">
               <SortDropdown classNames={classNames} />
+              </div>
               <FeedbackList
                 deployments={deployments}
                 statuses={statuses}

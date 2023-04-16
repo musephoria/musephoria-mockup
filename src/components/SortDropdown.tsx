@@ -11,7 +11,7 @@ import {
   UserPlusIcon,
 } from '@heroicons/react/20/solid'
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 

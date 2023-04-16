@@ -1,17 +1,33 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
+type Status = 'offline' | 'online' | 'error';
+type Environment = 'V2' | 'V9' | 'V4' | 'V7';
 
-const statuses = {
-  offline: 'text-gray-500 bg-gray-100/10',
-  online: 'text-green-400 bg-green-400/10',
-  error: 'text-rose-400 bg-rose-400/10',
-}
-const environments = {
-  V2: 'text-rose-400 bg-gray-600/30 ring-gray-700',
-  V9: 'text-indigo-400 bg-gray-600/30 ring-gray-700',
-  V4: 'text-emerald-400 bg-gray-600/30 ring-gray-700',
-  V7: 'text-fuchsia-400 bg-gray-600/30 ring-gray-700',
-}
-const deployments = [
+const statuses: Record<Status, string> = {
+    offline: 'text-gray-500 bg-gray-100/10',
+    online: 'text-green-400 bg-green-400/10',
+    error: 'text-rose-400 bg-rose-400/10',
+  };
+  
+  const environments: Record<Environment, string> = {
+    V2: 'text-rose-400 bg-gray-600/30 ring-gray-700',
+    V9: 'text-indigo-400 bg-gray-600/30 ring-gray-700',
+    V4: 'text-emerald-400 bg-gray-600/30 ring-gray-700',
+    V7: 'text-fuchsia-400 bg-gray-600/30 ring-gray-700',
+  };
+  
+  interface Deployment {
+    id: number;
+    href: string;
+    projectName: string;
+    teamName: string;
+    status: Status;
+    statusText: string;
+    description: string;
+    environment: Environment;
+  }
+  
+  const deployments: Deployment[] = [
   {
     id: 1,
     href: '#',
@@ -54,7 +70,7 @@ const deployments = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 

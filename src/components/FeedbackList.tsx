@@ -183,23 +183,25 @@ const activityItems = [
   
   export default function FeedbackList() {
     return (
-      <div className="bg-gray-200 py-8">
+      <div className="bg-rose-500 py-8">
         <div className="mx-auto px-6">
           <ul role="list" className="divide-y divide-white/5">
             {activityItems.map((item) => (
-              <li key={item.commit} className="py-4">
-                <div className="flex items-center gap-x-3">
+              <li key={item.commit} className="py-4 ">
+                <div className="drop-shadow-md bg-gray-500 border-solid border-2 rounded-md p-4 border-black hover:drop-shadow-xl">
+                <div className="flex items-center gap-x-3 ">
                   <img src={item.user.imageUrl} alt="" className="h-6 w-6 flex-none rounded-full bg-gray-800" />
-                  <h3 className="flex-auto truncate text-sm font-semibold leading-6 text-slate-900">{item.user.name}</h3>
-                  <time dateTime={item.dateTime} className="flex-none text-xs text-gray-500">
+                  <h3 className="flex-auto truncate text-sm font-semibold leading-6 text-gray-100">{item.user.name}</h3>
+                  <time dateTime={item.dateTime} className="flex-none text-xs text-gray-100">
                     {item.date}
                   </time>
                 </div>
-                <p className="mt-3 truncate text-sm text-gray-500">
-                  Left Feedback on <span className="text-gray-400">{item.projectName}</span> (
-                  <span className="font-mono text-gray-400">{item.commit}</span> of{' '}
-                  <span className="text-gray-400">{item.branch}</span>)
+                <p className="mt-3 truncate text-sm text-gray-100">
+                  Left Feedback on <span className="text-gray-100">{item.projectName}</span> (
+                  <span className="font-mono text-gray-100">{item.commit}</span> of{' '}
+                  <span className="text-gray-100">{item.branch}</span>)
                 </p>
+                </div>
               </li>
             ))}
           </ul>

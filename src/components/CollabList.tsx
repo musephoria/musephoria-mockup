@@ -20,7 +20,7 @@ interface CollabListProps {
 
 const CollabList: React.FC<CollabListProps> = ({ activityItems }) => {
     return (
-      <div className="bg-gray-900">
+      <div className="bg-gray-800">
         <div className="px-6">
           <ul role="list" className="divide-y divide-white/5">
             {activityItems.map((item) => (

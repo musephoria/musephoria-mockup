@@ -13,7 +13,6 @@ import { Bars3Icon, ChevronRightIcon, ChevronUpDownIcon, MagnifyingGlassIcon } f
 import Sidebar from '~/components/Sidebar'
 import DashboardTabs from '~/components/DashboardTabs'
 import SortDropdown from '~/components/SortDropdown'
-import FeedbackList from '~/components/FeedbackList'
 import ActivityFeed from '~/components/ActivityFeed'
 
 const navigation = [
@@ -89,29 +88,6 @@ export default function Index() {
         setSidebarOpen={setSidebarOpen}
         classNames={classNames}
       />
-
-      <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
-        <div className="py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 className="text-2xl font-semibold text-gray-900">Feedback</h1>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            {/* Replace with your content */}
-            <div className="py-4">
-              <div className="absolute top-5 right-8">
-              <SortDropdown classNames={classNames} />
-              </div>
-              <FeedbackList
-                deployments={deployments}
-                statuses={statuses}
-                environments={environments}
-                classNames={classNames}
-              />
-            </div>
-            {/* /End replace */}
-          </div>
-        </div>
-      </main>
     </div>
 
     <ActivityFeed activityItems={activityItems} />
